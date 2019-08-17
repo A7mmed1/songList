@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    </head>
+    <body>
+
+        <div id="app">
+            <div class="container">
+                <h1>SongsList</h1>
+                <form @submit.prevent="addSong">
+                    <input v-model="newSong.artist" type="text" >
+                    <input v-model="newSong.songName" type="text">
+
+                    <button type="submit" class="btn btn-primary" >Add</button>
+                    <ul class="list-group">
+                        <li class="list-group-item" v-for="(song, index) in songs">
+                            {{ song.artist }} - {{song.songName}}
+
+                        </li>
+                        <!-- <input v-model="target" type="text"   @click="add(index)">
+                        <button type="submit" class="btn btn-primary" @click="add(index)">add</button> -->
+                    </ul>
+                </form>
+            </div>
+
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
